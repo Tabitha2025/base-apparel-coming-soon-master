@@ -17,9 +17,9 @@
   <!-- Main Container -->
   <div class="container">
 
-    <!-- Left Content (Logo, Text, Form) -->
+    <!-- Left Section (Text & Form) -->
     <div class="text-content">
-      
+
       <!-- Logo -->
       <img src="images/logo.svg" alt="Base Apparel Logo" class="logo">
 
@@ -32,18 +32,22 @@
         Add your email below to stay up-to-date with announcements and our launch deals.
       </p>
 
-      <!-- Email Form -->
-      <form id="emailForm">
-        <input type="email" id="email" placeholder="Email Address" required>
-        <button type="submit">
-          <img src="images/icon-arrow.svg" alt="Submit">
-        </button>
-        <p class="error-message" id="errorMessage">Please enter a valid email</p>
-      </form>
+   <!-- Email Form -->
+<form id="emailForm">
+  <div class="input-container">
+    <input type="email" id="email" placeholder="Email Address" required>
+    <img src="images/icon-error.svg" alt="Error Icon" class="error-icon">
+    <button type="submit">
+      <img src="images/icon-arrow.svg" alt="Submit">
+    </button>
+  </div>
+  <p class="error-message" id="errorMessage">Please provide a valid email</p>
+</form>
+
 
     </div>
 
-    <!-- Hero Image: Switches Between Mobile & Desktop -->
+    <!-- Right Section (Hero Image) -->
     <picture>
       <source srcset="images/hero-desktop.jpg" media="(min-width: 768px)">
       <img src="images/hero-mobile.jpg" alt="Fashion Model" class="hero-image">
