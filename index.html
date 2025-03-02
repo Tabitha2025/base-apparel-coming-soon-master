@@ -1,68 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Base Apparel Coming Soon</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-
-    <!-- Link to External CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base Apparel Coming Soon</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Header with Logo -->
-    <header>
-        <img src="images/logo.svg" alt="Base Apparel Logo" class="logo">
-    </header>
-
-    <!-- Main Container -->
-    <div class="container">
-
-        <!-- Content Section -->
-        <div class="content">
-            <h1>
-                <span>We're</span>
-                Coming Soon
-            </h1>
-            <p>
-                Hello fellow shoppers! We're currently building our new fashion store. 
-                Add your email below to stay up-to-date with announcements and our launch deals.
-            </p>
-
-            <!-- Email Form -->
-            <form id="emailForm">
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Email Address" required>
-                    <img src="images/icon-error.svg" class="icon-error" alt="Error Icon" style="display: none;">
-                    <button type="submit">
-                        <img src="images/icon-arrow.svg" alt="Arrow Icon">
-                    </button>
-                </div>
-                <p class="error-message" id="errorMessage">Please enter a valid email</p>
-            </form>
-        </div>
-
-        <!-- Hero Image Section -->
-        <div class="hero">
-            <img src="images/hero-desktop.jpg" alt="Fashion Model" class="hero-image">
-        </div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-            Coded by <a href="#">Your Name Here</a>.
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/logo.svg" alt="Base Apparel Logo">
+      </div>
+      <!-- Mobile Hero Image -->
+      <img src="images/hero-mobile.jpg" alt="Base Apparel" class="hero-mobile">
+      <!-- Text Content -->
+      <div class="inner">
+        <h1><span>We're </span><br>coming<br>soon</h1>
+        <p>
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our launch deals.
         </p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-
+        <!-- Email Subscription Form -->
+        <form id="form">
+          <input type="email" id="email" placeholder="Email Address" required>
+          <img class="error-icon" src="images/icon-error.svg" alt="Error Icon">
+          <button class="button" type="submit">
+            <img src="images/icon-arrow.svg" alt="Submit">
+          </button>
+          <small>Please provide a valid email</small>
+        </form>
+      </div>
+    </div>
+    <!-- Right Section with Desktop Hero Image -->
+    <div class="right"></div>
+  </div>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
