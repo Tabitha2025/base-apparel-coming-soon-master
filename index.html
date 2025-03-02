@@ -30,13 +30,13 @@
         <form id="emailForm">
           <div class="form-group">
             <input type="email" id="email" placeholder="Email Address" required>
-            <img class="error-icon" src="images/icon-error.svg" alt="Error Icon">
-            <button class="button" type="submit">
+            <img class="error-icon" src="images/icon-error.svg" alt="Error Icon" style="display: none;">
+            <button class="button" type="submit" id="submit-btn">
               <img src="images/icon-arrow.svg" alt="Submit">
             </button>
           </div>
-          <p class="error-message" id="errorMessage">Please provide a valid email</p>
-          <p class="success-message"></p> <!-- Success Message -->
+          <p class="error-message" id="errorMessage" style="display: none;">Please provide a valid email</p>
+          <p class="success-message" style="display: none;"></p> <!-- Success Message -->
         </form>
       </div>
     </div>
