@@ -72,12 +72,13 @@ open index.html
 
 ### ✅ GitHub Pages Deployment
 
-1. **Push your latest code**:
+## 1. **Push your latest code**:
    ```sh
    git add .
    git commit -m "Deploy Base Apparel Coming Soon Page"
    git push origin main
-```## 2. Enable GitHub Pages
+   ```
+## 2. Enable GitHub Pages
 
 - Go to **Settings** → Scroll down to **Pages**.  
 - Under **Source**, select **`main` branch**, then click **Save**.  
