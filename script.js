@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const successMessage = document.querySelector(".success-message");
   const formGroup = document.querySelector(".form-group");
   const submitButton = document.querySelector(".button");
+  let errorIcon = document.querySelector(".icon-error");
 
   // Email validation regex pattern
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (emailValue === "" || !emailPattern.test(emailValue)) {
       showError("Please provide a valid email address");
+      shakeButton();
     } else {
       hideError();
       showSuccess("You have subscribed successfully! 🎉");
@@ -32,27 +34,19 @@ document.addEventListener("DOMContentLoaded", function () {
     errorMessage.textContent = message;
     errorMessage.style.display = "block";
     emailInput.classList.add("error-border");
+    formGroup.classList.add("error");
 
-    // Add error icon if not present
-    let errorIcon = document.querySelector(".icon-error");
-    if (!errorIcon) {
-      errorIcon = document.createElement("img");
-      errorIcon.src = "images/icon-error.svg";
-      errorIcon.alt = "Error icon";
-      errorIcon.classList.add("icon-error");
-      formGroup.appendChild(errorIcon);
-    }
+    // Show error icon
+    errorIcon.style.display = "block";
   }
 
   function hideError() {
     errorMessage.style.display = "none";
     emailInput.classList.remove("error-border");
+    formGroup.classList.remove("error");
 
-    // Remove error icon if exists
-    const errorIcon = document.querySelector(".icon-error");
-    if (errorIcon) {
-      errorIcon.remove();
-    }
+    // Hide error icon
+    errorIcon.style.display = "none";
   }
 
   function showSuccess(message) {
@@ -62,5 +56,13 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       successMessage.style.display = "none"; // Hide after 3 seconds
     }, 3000);
+  }
+
+  function shakeButton() {
+    submitButton.classList.add("shake");
+
+    setTimeout(() => {
+      submitButton.classList.remove("shake");
+    }, 500);
   }
 });
