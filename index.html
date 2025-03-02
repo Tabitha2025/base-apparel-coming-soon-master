@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Base Apparel Coming Soon</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    
-    <!-- CSS -->
+
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Left Content -->
-        <div class="text-content">
-            <img src="images/logo.svg" alt="Base Apparel Logo" class="logo">
+    <!-- Header with Logo -->
+    <header>
+        <img src="images/logo.svg" alt="Base Apparel Logo" class="logo">
+    </header>
 
-            <h1><span class="text-light">We're</span> Coming Soon</h1>
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Content Section -->
+        <div class="content">
+            <h1>
+                <span>We're</span>
+                Coming Soon
+            </h1>
             <p>
                 Hello fellow shoppers! We're currently building our new fashion store. 
                 Add your email below to stay up-to-date with announcements and our launch deals.
@@ -26,23 +35,31 @@
 
             <!-- Email Form -->
             <form id="emailForm">
-                <div class="input-container">
+                <div class="form-group">
                     <input type="email" id="email" placeholder="Email Address" required>
-                    <img src="images/icon-error.svg" alt="Error Icon" class="error-icon">
+                    <img src="images/icon-error.svg" class="icon-error" alt="Error Icon" style="display: none;">
                     <button type="submit">
-                        <img src="images/icon-arrow.svg" alt="Submit">
+                        <img src="images/icon-arrow.svg" alt="Arrow Icon">
                     </button>
                 </div>
-                <p class="error-message" id="errorMessage">Please provide a valid email</p>
+                <p class="error-message" id="errorMessage">Please enter a valid email</p>
             </form>
         </div>
 
-        <!-- Right Hero Image -->
-        <div class="image-container">
-            <img src="images/hero-desktop.jpg" class="hero-desktop" alt="Fashion Model">
-            <img src="images/hero-mobile.jpg" class="hero-mobile" alt="Fashion Model">
+        <!-- Hero Image Section -->
+        <div class="hero">
+            <img src="images/hero-desktop.jpg" alt="Fashion Model" class="hero-image">
         </div>
+
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#">Your Name Here</a>.
+        </p>
+    </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
