@@ -27,13 +27,16 @@
           Add your email below to stay up-to-date with announcements and our launch deals.
         </p>
         <!-- Email Subscription Form -->
-        <form id="form">
-          <input type="email" id="email" placeholder="Email Address" required>
-          <img class="error-icon" src="images/icon-error.svg" alt="Error Icon">
-          <button class="button" type="submit">
-            <img src="images/icon-arrow.svg" alt="Submit">
-          </button>
-          <small>Please provide a valid email</small>
+        <form id="emailForm">
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address" required>
+            <img class="error-icon" src="images/icon-error.svg" alt="Error Icon">
+            <button class="button" type="submit">
+              <img src="images/icon-arrow.svg" alt="Submit">
+            </button>
+          </div>
+          <p class="error-message" id="errorMessage">Please provide a valid email</p>
+          <p class="success-message"></p> <!-- Success Message -->
         </form>
       </div>
     </div>
