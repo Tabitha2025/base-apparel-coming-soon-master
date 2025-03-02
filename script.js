@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Access elements
   const emailForm = document.getElementById("emailForm");
   const emailInput = document.getElementById("email");
-  const errorMessage = document.querySelector(".error-message");
+  const errorMessage = document.getElementById("errorMessage");
   const successMessage = document.querySelector(".success-message");
   const formGroup = document.querySelector(".form-group");
   const submitButton = document.querySelector(".button");
-  let errorIcon = document.querySelector(".icon-error");
+  const errorIcon = document.querySelector(".error-icon");
 
   // Email validation regex pattern
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (emailValue === "" || !emailPattern.test(emailValue)) {
       showError("Please provide a valid email address");
-      shakeButton();
     } else {
       hideError();
       showSuccess("You have subscribed successfully! 🎉");
@@ -34,16 +33,20 @@ document.addEventListener("DOMContentLoaded", function () {
     errorMessage.textContent = message;
     errorMessage.style.display = "block";
     emailInput.classList.add("error-border");
-    formGroup.classList.add("error");
 
     // Show error icon
     errorIcon.style.display = "block";
+
+    // Shake button animation
+    submitButton.classList.add("shake");
+    setTimeout(() => {
+      submitButton.classList.remove("shake");
+    }, 500);
   }
 
   function hideError() {
     errorMessage.style.display = "none";
     emailInput.classList.remove("error-border");
-    formGroup.classList.remove("error");
 
     // Hide error icon
     errorIcon.style.display = "none";
@@ -56,13 +59,5 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       successMessage.style.display = "none"; // Hide after 3 seconds
     }, 3000);
-  }
-
-  function shakeButton() {
-    submitButton.classList.add("shake");
-
-    setTimeout(() => {
-      submitButton.classList.remove("shake");
-    }, 500);
   }
 });

@@ -8,7 +8,7 @@
   --dark-grayish-red: hsl(0, 6%, 24%);
 }
 
-/* Global Reset */
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,7 +25,7 @@ body {
   justify-content: center;
 }
 
-/* Container */
+/* Main Container */
 .container {
   display: flex;
   width: 80%;
@@ -36,18 +36,18 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Left Section */
+/* Left Section (Text & Form) */
 .left {
   flex: 1;
-  padding: 50px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .logo img {
-  width: 150px;
-  margin-bottom: 50px;
+  width: 120px;
+  margin-bottom: 40px;
 }
 
 .hero-mobile {
@@ -60,6 +60,7 @@ body {
   color: var(--dark-grayish-red);
   font-size: 48px;
   line-height: 1.2;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
@@ -77,9 +78,7 @@ body {
 /* Form */
 form {
   position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
+  max-width: 400px;
 }
 
 input {
@@ -90,17 +89,10 @@ input {
   font-size: 16px;
   color: var(--dark-grayish-red);
   outline: none;
-  transition: 0.3s ease-in-out;
 }
 
-/* Placeholder */
 input::placeholder {
   color: var(--desaturated-red);
-}
-
-/* Error Border */
-.error-border {
-  border: 2px solid var(--soft-red) !important;
 }
 
 /* Submit Button */
@@ -108,7 +100,7 @@ input::placeholder {
   position: absolute;
   top: 0;
   right: 0;
-  width: 80px;
+  width: 60px;
   height: 100%;
   border: none;
   background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
@@ -117,61 +109,50 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.4s ease-in-out;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-/* Hover & Active States */
 .button:hover {
   transform: translateX(10px);
   background: linear-gradient(135deg, hsl(0, 100%, 96%), hsl(0, 80%, 86%));
 }
 
-.button:active {
-  background: #EE8C8C;
+.button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Error Icon (Hidden by Default) */
+.error-icon {
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  transform: translateY(-50%);
+  display: none;
 }
 
 /* Error Message */
 .error-message {
   color: var(--soft-red);
-  font-size: 14px;
   margin-top: 10px;
   display: none;
-  text-align: left;
 }
 
 /* Success Message */
 .success-message {
   color: green;
-  font-size: 14px;
   margin-top: 10px;
   display: none;
-  text-align: left;
 }
 
-/* Error Icon (Only visible when error is active) */
-.icon-error {
-  position: absolute;
-  top: 50%;
-  right: 90px;
-  transform: translateY(-50%);
-  display: none;
-  width: 20px;
-}
-
-.form-group.error .icon-error {
-  display: block;
-}
-
-/* Right Section */
+/* Right Section (Hero Image) */
 .right {
   flex: 1;
   background: url('images/hero-desktop.jpg') no-repeat center center;
   background-size: cover;
 }
 
-/* =============================== */
-/* 📱 Mobile Responsive Styles */
-/* =============================== */
+/* Responsive Mobile Styles */
 @media (max-width: 768px) {
   body {
     background: url('images/bg-pattern-mobile.svg') no-repeat center center;
@@ -210,6 +191,7 @@ input::placeholder {
   }
 
   form {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -225,12 +207,11 @@ input::placeholder {
     border-radius: 30px;
   }
 
-  .icon-error {
+  .error-icon {
     right: 20px;
   }
 
-  .error-message,
-  .success-message {
+  small {
     text-align: center;
   }
 }
