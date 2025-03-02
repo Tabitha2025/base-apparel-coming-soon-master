@@ -23,6 +23,9 @@ body {
 .container {
     max-width: 375px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Logo */
@@ -57,48 +60,79 @@ p {
     margin: 20px 10px;
 }
 
-/* Form */
-form {
+/* ========================= */
+/* 📨 Form Styles */
+/* ========================= */
+
+/* Input Container */
+.input-container {
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 30px;
+    overflow: hidden;
+    max-width: 400px;
+    background: white;
 }
 
+/* Input Field */
 input {
     flex: 1;
     padding: 12px;
-    border: 1px solid hsl(0, 36%, 70%);
-    border-radius: 20px;
+    border: none;
     outline: none;
     font-size: 14px;
+    border-radius: 30px 0 0 30px;
+    padding-left: 20px;
 }
 
+/* Submit Button */
 button {
     background: hsl(0, 93%, 68%);
-    color: white;
-    border: none;
     padding: 12px 18px;
-    border-radius: 50%;
+    border: none;
     cursor: pointer;
     transition: background 0.3s ease;
+    border-radius: 0 30px 30px 0;
 }
 
-button:hover {
-    background: hsl(0, 80%, 86%);
+button img {
+    width: 20px;
+}
+
+/* Error Icon */
+.error-icon {
+    width: 20px;
+    position: absolute;
+    right: 60px;
+    display: none;
 }
 
 /* Error Message */
 .error-message {
     color: hsl(0, 93%, 68%);
     font-size: 12px;
-    display: none;
     margin-top: 5px;
+    display: none;
 }
 
-/* Footer */
+/* Show error styles */
+.input-container.error {
+    border: 2px solid hsl(0, 93%, 68%);
+}
+
+.input-container.error .error-icon {
+    display: block;
+}
+
+.input-container.error input {
+    border-color: hsl(0, 93%, 68%);
+}
+
+/* ========================= */
+/* 🦶 Footer Styles */
+/* ========================= */
 footer {
     margin-top: 20px;
     font-size: 12px;
@@ -141,6 +175,10 @@ footer {
     form {
         flex-direction: row;
         max-width: 400px;
+    }
+
+    .input-container {
+        width: 100%;
     }
 
     input {
