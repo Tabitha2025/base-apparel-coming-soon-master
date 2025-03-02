@@ -77,6 +77,7 @@ body {
 /* Form */
 form {
   position: relative;
+  width: 100%;
 }
 
 input {
@@ -89,10 +90,17 @@ input {
   outline: none;
 }
 
+/* Placeholder Styling */
 input::placeholder {
   color: var(--desaturated-red);
 }
 
+/* Error Border */
+.error-border {
+  border: 2px solid var(--soft-red) !important;
+}
+
+/* Submit Button */
 .button {
   position: absolute;
   top: 0;
@@ -106,6 +114,11 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: hsl(0, 80%, 86%);
 }
 
 .button img {
@@ -113,18 +126,32 @@ input::placeholder {
   height: 20px;
 }
 
-.error-icon {
+/* Error Message */
+.error-message {
+  color: var(--soft-red);
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+  text-align: left;
+}
+
+/* Success Message */
+.success-message {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+  text-align: left;
+}
+
+/* Error Icon */
+.icon-error {
   position: absolute;
   top: 50%;
   right: 80px;
   transform: translateY(-50%);
   display: none;
-}
-
-small {
-  color: var(--soft-red);
-  margin-top: 10px;
-  display: none;
+  width: 20px;
 }
 
 /* Right Section */
@@ -134,7 +161,9 @@ small {
   background-size: cover;
 }
 
-/* Responsive Styles */
+/* =============================== */
+/* 📱 Mobile Responsive Styles */
+/* =============================== */
 @media (max-width: 768px) {
   body {
     background: url('images/bg-pattern-mobile.svg') no-repeat center center;
@@ -189,11 +218,12 @@ small {
     border-radius: 30px;
   }
 
-  .error-icon {
+  .icon-error {
     right: 20px;
   }
 
-  small {
+  .error-message,
+  .success-message {
     text-align: center;
   }
 }
