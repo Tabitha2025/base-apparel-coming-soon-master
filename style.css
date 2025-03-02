@@ -12,7 +12,8 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
-    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    background: url('images/bg-pattern-desktop.svg') no-repeat;
+    background-size: cover;
     color: hsl(0, 6%, 24%);
     text-align: center;
     padding: 20px;
@@ -24,16 +25,17 @@ body {
     margin: auto;
 }
 
-/* Image Section */
-.image-section img {
-    width: 100%;
-    border-radius: 10px;
-}
-
 /* Logo */
 .logo {
-    margin-top: 20px;
     width: 120px;
+    margin-top: 20px;
+}
+
+/* Hero Image */
+.hero-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 /* Heading */
@@ -58,10 +60,11 @@ p {
 /* Form */
 form {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    margin-top: 15px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 input {
@@ -95,15 +98,57 @@ button:hover {
     margin-top: 5px;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-    .container {
-        max-width: 600px;
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* ========================= */
+/* 💻 Responsive Design */
+/* ========================= */
+
+/* 📱 Mobile-First (Default) */
+@media (max-width: 767px) {
+    body {
+        background: url('images/bg-pattern-desktop.svg') no-repeat;
+        background-size: cover;
+        padding: 20px;
     }
 }
 
-@media (min-width: 1024px) {
+/* 💻 Desktop (768px and above) */
+@media (min-width: 768px) {
     .container {
         max-width: 1440px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 50px;
+    }
+
+    .hero-image {
+        width: 50%;
+        border-radius: 0;
+    }
+
+    .text-content {
+        width: 40%;
+        margin-left: 50px;
+    }
+
+    form {
+        flex-direction: row;
+        max-width: 400px;
+    }
+
+    input {
+        flex: 1;
+        border-radius: 20px 0 0 20px;
+    }
+
+    button {
+        border-radius: 0 20px 20px 0;
     }
 }

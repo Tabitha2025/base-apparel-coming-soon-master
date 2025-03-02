@@ -7,7 +7,7 @@
   <title>Base Apparel Coming Soon</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images\favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 
   <!-- Link to External CSS -->
   <link rel="stylesheet" href="style.css">
@@ -17,27 +17,37 @@
   <!-- Main Container -->
   <div class="container">
 
-    <!-- Logo -->
-    <img src="images\logo.svg" alt="Base Apparel Logo" class="logo">
+    <!-- Left Content (Logo, Text, Form) -->
+    <div class="text-content">
+      
+      <!-- Logo -->
+      <img src="images/logo.svg" alt="Base Apparel Logo" class="logo">
 
-    <!-- Hero Image -->
-    <img src="images/hero-mobile.jpg" alt="Fashion Model" class="hero-image">
+      <!-- Heading -->
+      <h1>We're <span>coming soon</span></h1>
 
-    <!-- Heading -->
-    <h1>We're <span>coming soon</span></h1>
+      <!-- Description -->
+      <p>
+        Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
 
-    <!-- Description -->
-    <p>
-      Hello fellow shoppers! We're currently building our new fashion store. 
-      Add your email below to stay up-to-date with announcements and our launch deals.
-    </p>
+      <!-- Email Form -->
+      <form id="emailForm">
+        <input type="email" id="email" placeholder="Email Address" required>
+        <button type="submit">
+          <img src="images/icon-arrow.svg" alt="Submit">
+        </button>
+        <p class="error-message" id="errorMessage">Please enter a valid email</p>
+      </form>
 
-    <!-- Email Form -->
-    <form id="emailForm">
-      <input type="email" id="email" placeholder="Email Address" required>
-      <button type="submit">→</button>
-      <p class="error-message" id="errorMessage">Please enter a valid email</p>
-    </form>
+    </div>
+
+    <!-- Hero Image: Switches Between Mobile & Desktop -->
+    <picture>
+      <source srcset="images/hero-desktop.jpg" media="(min-width: 768px)">
+      <img src="images/hero-mobile.jpg" alt="Fashion Model" class="hero-image">
+    </picture>
 
   </div>
 
