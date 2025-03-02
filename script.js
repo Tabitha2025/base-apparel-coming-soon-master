@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Accessing elements
+  // Access elements
   const emailForm = document.getElementById("emailForm");
   const emailInput = document.getElementById("email");
   const errorMessage = document.querySelector(".error-message");
@@ -10,18 +10,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // Email validation regex pattern
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  submitButton.addEventListener("click", function (event) {
+  // Form submit event listener
+  emailForm.addEventListener("submit", function (event) {
     event.preventDefault();
+    validateEmail();
+  });
+
+  function validateEmail() {
     const emailValue = emailInput.value.trim();
 
     if (emailValue === "" || !emailPattern.test(emailValue)) {
-      showError("Please provide a valid email");
+      showError("Please provide a valid email address");
     } else {
       hideError();
       showSuccess("You have subscribed successfully! 🎉");
       emailInput.value = ""; // Clear input after success
     }
-  });
+  }
 
   function showError(message) {
     errorMessage.textContent = message;
@@ -29,8 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     emailInput.classList.add("error-border");
 
     // Add error icon if not present
-    if (!document.querySelector(".icon-error")) {
-      const errorIcon = document.createElement("img");
+    let errorIcon = document.querySelector(".icon-error");
+    if (!errorIcon) {
+      errorIcon = document.createElement("img");
       errorIcon.src = "images/icon-error.svg";
       errorIcon.alt = "Error icon";
       errorIcon.classList.add("icon-error");
