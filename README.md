@@ -1,6 +1,7 @@
 # 🛍️ Base Apparel - Coming Soon Page
 
-![Design Preview](./design/desktop-preview.jpg)
+![image](https://github.com/user-attachments/assets/f66aaa48-a670-408f-92ae-1fe7ef32ea92)
+
 
 ## 🚀 Overview
 
