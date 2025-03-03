@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailInput = document.querySelector(".email-field");
   const errorMessage = document.querySelector(".error-message");
   const successMessage = document.querySelector(".success-message");
-  const formGroup = document.querySelector(".form-group");
-  let errorIcon = document.querySelector(".error-icon");
+  const errorIcon = document.querySelector(".error-icon");
 
   // Email validation regex pattern
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -31,19 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function showError(message) {
     errorMessage.textContent = message;
     errorMessage.style.display = "block";
-    errorMessage.classList.add("error-txt");
-    emailInput.classList.add("failed");
-
-    // Show error icon
-    if (!errorIcon) {
-      errorIcon = document.createElement("img");
-      errorIcon.src = "images/icon-error.svg";
-      errorIcon.alt = "Error icon";
-      errorIcon.classList.add("error-icon");
-      formGroup.appendChild(errorIcon);
-    } else {
-      errorIcon.style.display = "block";
-    }
+    emailInput.classList.add("error-border");
+    errorIcon.style.display = "block"; // Show error icon
 
     // Shake button animation on error
     submitBtn.classList.add("shake");
@@ -54,13 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function hideError() {
     errorMessage.style.display = "none";
-    errorMessage.classList.remove("error-txt");
-    emailInput.classList.remove("failed");
-
-    // Hide error icon
-    if (errorIcon) {
-      errorIcon.style.display = "none";
-    }
+    emailInput.classList.remove("error-border");
+    errorIcon.style.display = "none"; // Hide error icon
   }
 
   function showSuccess(message) {
@@ -68,8 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
     successMessage.classList.add("success-txt");
     successMessage.style.display = "block";
 
+    // Reset after 3 seconds
     setTimeout(() => {
-      successMessage.style.display = "none"; // Hide after 3 seconds
+      successMessage.style.display = "none";
     }, 3000);
   }
 });
